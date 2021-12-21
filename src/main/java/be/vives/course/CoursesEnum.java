@@ -1,6 +1,6 @@
-package be.vives;
+package be.vives.course;
 
-public enum Courses {
+public enum CoursesEnum {
     MATHMATICS("Mathmatics", "MATH"),
     ENGLISH("English", "ENG"),
     NEDERLANDS("Nederlands", "NED"),
@@ -12,7 +12,7 @@ public enum Courses {
     private final String courseName;
     private final String id;
 
-    Courses(String courseName, String id) {
+    CoursesEnum(String courseName, String id) {
         this.courseName = courseName;
         this.id = id;
     }

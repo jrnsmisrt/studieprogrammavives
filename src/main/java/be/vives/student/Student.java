@@ -1,4 +1,7 @@
-package be.vives;
+package be.vives.student;
+
+import be.vives.trajectory.Trajectory;
+import be.vives.course.Course;
 
 import java.util.UUID;
 
@@ -46,7 +49,7 @@ public class Student {
         trajectory.removeCourse(courseId);
     }
     public String showCoursesInTrajectory(){
-        return trajectory.getAllCoursesFromTrajectory();
+        return name+" "+firstName+" "+trajectory.getAllCoursesFromTrajectory();
     }
 
     @Override
