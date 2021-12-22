@@ -15,7 +15,7 @@ public class Student {
         this.name = name;
         this.firstName = firstName;
         this.studentId = UUID.randomUUID();
-        this.trajectory=trajectory;
+        this.trajectory = trajectory;
     }
 
     public String getName() {
@@ -42,18 +42,37 @@ public class Student {
         return trajectory;
     }
 
-    public void addCourseToTrajectory(Course course){
+    public void addCourseToTrajectory(Course course) {
         trajectory.addCourse(course);
     }
-    public void removeCourseFromTrajectory(String courseId){
+
+    public void removeCourseFromTrajectory(String courseId) {
         trajectory.removeCourse(courseId);
     }
-    public String showCoursesInTrajectory(){
-        return name+" "+firstName+" "+trajectory.getAllCoursesFromTrajectory();
+
+    public String showCoursesInTrajectory() {
+        return name + " " + firstName + " " + trajectory.getAllCoursesFromTrajectory();
+    }
+
+    public void setScoreForCourse(double score, String courseId) {
+        if (isCourseIdCorrect(courseId)) {
+            trajectory.getCourse(courseId).setAchievedScore(score);
+        }
+        else System.out.println("Het vak ID werd niet gevonden.");
+
+    }
+
+    private boolean isCourseIdCorrect(String courseId) {
+        for (Course course : trajectory.getCourses()) {
+            if (course.getCourseId().equals(courseId)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return name+" "+firstName;
+        return name + " " + firstName;
     }
 }

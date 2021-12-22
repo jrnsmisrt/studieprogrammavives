@@ -29,6 +29,19 @@ public class StudieProgrammaRunner {
         moneyPenny.getTrajectory().getCourse("FRANC").setAchievedScore(10);
         moneyPenny.getTrajectory().getCourse("COD").setAchievedScore(12);
         System.out.println(moneyPenny.showCoursesInTrajectory());
+        System.out.println("---------------------------------------");
+
+        List<Course> courseListChapoGuzman = new ArrayList<>();
+        Trajectory trajectoryOfChapoGuzman = new Trajectory(courseListChapoGuzman);
+        trajectoryOfChapoGuzman.addCourse(new Course(CoursesEnum.MATHMATICS));
+        trajectoryOfChapoGuzman.addCourse(new Course(CoursesEnum.NEDERLANDS));
+        Student chapoGuzman = new Student("Guzman", "Chapo", trajectoryOfChapoGuzman);
+        chapoGuzman.addCourseToTrajectory(new Course(CoursesEnum.ECONOMY));
+        chapoGuzman.getTrajectory().getCourse("ECON").setAchievedScore(10);
+        chapoGuzman.getTrajectory().getCourse("MATH").setAchievedScore(12);
+        chapoGuzman.setScoreForCourse(18,"NED");
+        System.out.println(chapoGuzman.showCoursesInTrajectory());
+        System.out.println("---------------------------------------");
 
 
     }

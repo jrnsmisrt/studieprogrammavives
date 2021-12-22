@@ -46,7 +46,7 @@ public class Trajectory {
         double succesResult=0;
 
         for(Course course : getCourses()){
-            if(course.getSuccess().equals("geslaagd")){
+            if(course.getSuccess().equals("credit behaald")){
                 succesResult+=1;
             }
         }
