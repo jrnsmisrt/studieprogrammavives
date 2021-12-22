@@ -3,7 +3,9 @@ package be.vives.student;
 import be.vives.trajectory.Trajectory;
 import be.vives.course.Course;
 
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class Student {
     private String name;
@@ -50,8 +52,8 @@ public class Student {
         trajectory.removeCourse(courseId);
     }
 
-    public String showCoursesInTrajectory() {
-        return name + " " + firstName + " " + trajectory.getAllCoursesFromTrajectory();
+    public List<Course> showCoursesInTrajectory() {
+        return trajectory.getCourses();
     }
 
     public void setScoreForCourse(double score, String courseId) {
@@ -60,6 +62,9 @@ public class Student {
         }
         else System.out.println("Het vak ID werd niet gevonden.");
 
+    }
+    public String getTrajectoryInformation(){
+        return name + " " + firstName + " " + trajectory.getAllCoursesFromTrajectory();
     }
 
     private boolean isCourseIdCorrect(String courseId) {

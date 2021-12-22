@@ -18,7 +18,7 @@ public class StudieProgrammaRunner {
         Student james = new Student("Bond", "James", trajectoryOfBondJames);
         james.addCourseToTrajectory(new Course(CoursesEnum.ECONOMY));
         james.getTrajectory().getCourse("ECON").setAchievedScore(10);
-        System.out.println(james.showCoursesInTrajectory());
+        System.out.println(james.getTrajectoryInformation());
         System.out.println("---------------------------------------");
 
         List<Course> courseListMoneyPenny = new ArrayList<>();
@@ -28,7 +28,7 @@ public class StudieProgrammaRunner {
         moneyPenny.addCourseToTrajectory(new Course(CoursesEnum.CODING));
         moneyPenny.getTrajectory().getCourse("FRANC").setAchievedScore(10);
         moneyPenny.getTrajectory().getCourse("COD").setAchievedScore(12);
-        System.out.println(moneyPenny.showCoursesInTrajectory());
+        System.out.println(moneyPenny.getTrajectoryInformation());
         System.out.println("---------------------------------------");
 
         List<Course> courseListChapoGuzman = new ArrayList<>();
@@ -40,7 +40,7 @@ public class StudieProgrammaRunner {
         chapoGuzman.getTrajectory().getCourse("ECON").setAchievedScore(10);
         chapoGuzman.getTrajectory().getCourse("MATH").setAchievedScore(12);
         chapoGuzman.setScoreForCourse(18,"NED");
-        System.out.println(chapoGuzman.showCoursesInTrajectory());
+        System.out.println(chapoGuzman.getTrajectoryInformation());
         System.out.println("---------------------------------------");
 
 
